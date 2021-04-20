@@ -1,0 +1,27 @@
+package Condition;
+
+import java.util.Scanner;
+
+public class javabasics {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a number");
+		Scanner sn=new Scanner(System.in);
+		int i=Integer.parseInt(sn.nextLine());
+		//int i=Integer.parseInt(System.console().readLine());
+		if(i<=20)
+		{
+			System.out.println(i+"is less less than or equal to 20");
+		}
+		else if((i>=45)&&(i<20))
+		{
+		System.out.println(i+" is between 20 and 45");
+		}
+		else
+		{
+			System.out.println(i+" Is above 45 ");
+		}
+
+	}
+
+}
