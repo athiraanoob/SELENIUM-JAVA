@@ -1,0 +1,24 @@
+package Condition;
+
+import java.util.Scanner;
+
+public class loopwhile {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the Limit");
+		Scanner sn1=new Scanner(System.in);
+		int i=Integer.parseInt(sn1.nextLine());
+		while(i<=40)
+		{
+			System.out.println(i);
+			i++;
+		}
+		do
+		{
+			System.out.println(i);
+			i++;
+		}while(i<=40);
+
+	}
+
+}
