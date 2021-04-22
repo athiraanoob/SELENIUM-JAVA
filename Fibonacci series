@@ -1,0 +1,20 @@
+package practiceproblem;
+
+public class Fibinaucci {
+
+	public static void main(String[] args) {
+		long firstno=0,secondno=1;
+		long sum=0;
+//System.out.println(firstno);
+//System.out.println(secondno);
+	for(int i=0;i<=100;i++)
+	{
+		System.out.println(firstno);
+		sum=firstno+secondno;
+		firstno=secondno;
+		secondno=sum;
+	}
+
+	}
+
+}
