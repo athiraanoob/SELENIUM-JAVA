@@ -1,0 +1,11 @@
+package practiceproblem;
+
+public class Swap {
+
+	public static void main(String[] args) {
+		int a=10,b=20,c;
+		System.out.println("Numbers before swapping a="+a+",b="+b);
+		System.out.println("Numbers After swapping a="+((a+b)-a)+",b="+((a+b)-b));
+		}
+
+}
