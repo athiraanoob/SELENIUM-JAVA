@@ -1,0 +1,38 @@
+package practiceproblem;
+
+import java.util.Scanner;
+
+public class reverse {
+
+	public static void main(String[] args) {
+		int rev = 0, i = 0, num = 0;
+		int[] rv1 = new int[9];
+		// String rev;
+		System.out.print("Please enter a number(greater than 0) : ");
+		Scanner snr = new Scanner(System.in);
+		String input = snr.nextLine();
+		while (0 == num) {
+			try {
+				num = Integer.parseInt(input);
+				if(0 == num){
+					throw new Exception();
+				}
+			} catch (Exception e) {
+				System.out.print("Incorrect input. Please enter only numbers(greater than 0) : ");
+				num = 0;
+				input = snr.nextLine();
+			}
+		}
+
+		printRev(input);
+	}
+
+	private static void printRev(String ip) {
+		StringBuffer sb = new StringBuffer();
+		for (int i = (ip.length() - 1); i >= 0; --i) {
+			sb.append(ip.charAt(i));
+		}
+		System.out.println("Reverse of the number : "+sb);
+	}
+
+}
