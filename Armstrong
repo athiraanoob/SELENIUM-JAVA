@@ -1,0 +1,31 @@
+package practiceproblem;
+
+import java.util.Scanner;
+
+public class armstrong_number {
+
+	public static void main(String[] args) {
+		int a,n;
+		long s=0;
+		System.out.println("Enter the number");
+		Scanner scn=new Scanner(System.in);
+		int i=Integer.parseInt(scn.nextLine());
+		n=i;
+		while(i!=0)
+		{
+			a=i%10;
+			s=s+(a*a*a);
+			i=((i/10)%100);
+		}
+		if(s==n)
+		{
+			System.out.println(n+" is Armstrong number");
+		}
+		else
+		{
+			System.out.println(n+" is not an Armstrong number");
+		}
+
+	}
+
+}
