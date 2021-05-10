@@ -1,0 +1,36 @@
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Multiselect {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+		driver.navigate().to("https://jqueryui.com/selectable/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200));
+		WebElement ww=driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+		driver.switchTo().frame(ww);
+		WebElement wb1=driver.findElement(By.xpath("//li[text()='Item 1']"));
+		WebElement wb2=driver.findElement(By.xpath("//li[text()='Item 2']"));
+		WebElement wb3=driver.findElement(By.xpath("//li[text()='Item 3']"));
+		WebElement wb4=driver.findElement(By.xpath("//li[text()='Item 4']"));
+		Actions builder=new Actions(driver);
+		builder
+		.keyDown(wb1,Keys.LEFT_CONTROL)
+		.clickAndHold()
+		.clickAndHold()
+		.clickAndHold()
+		.keyUp(wb4,Keys.LEFT_CONTROL)
+		.perform();
+
+	}
+
+}
