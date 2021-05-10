@@ -1,0 +1,32 @@
+package Week2.day2;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class table11 {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+		driver.navigate().to("https://erail.in/");
+		driver.findElement(By.id("txtStationFrom")).clear();
+		driver.findElement(By.id("txtStationFrom")).sendKeys("SBC",Keys.TAB);
+		driver.findElement(By.id("txtStationTo")).clear();
+		driver.findElement(By.id("txtStationTo")).sendKeys("DLI",Keys.TAB);
+		WebElement table=driver.findElement(By.xpath("//table[@class='DataTable TrainList TrainListHeader']"));
+		List<WebElement> lst=table.findElements(By.tagName("tr"));
+		WebElement firstrow=lst.get(1);
+		List<WebElement> allcols=firstrow.findElements(By.tagName("td"));
+		WebElement wb=allcols.get(1);
+		System.out.println(wb.getText());
+		
+
+	}
+
+}
